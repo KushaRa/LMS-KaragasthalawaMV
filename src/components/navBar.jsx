@@ -1,11 +1,12 @@
 import React from 'react';
+import './navBar.css';
 
 const NavBar = () => {
   return (
-    <div className='nav'>
+    <div className='navB'>
         <nav>
-            <ul>
-                <li><img></img></li>
+            <div className='logoN'>LMS</div>
+            <ul>                
                 <li>Dashboard</li>
                 <li>Books</li>
                 <li>Members</li>
