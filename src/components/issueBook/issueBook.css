@@ -1,31 +1,35 @@
-.issue-book-modal {
-    width: 400px;
-    margin: 20px auto;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
+/* Make the form cover the entire page */
+.issue-book-page {
+    width: 100%;
+    height: 100vh;
+    background: #440a0aea;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     font-family: Arial, sans-serif;
+    padding: 20px;
   }
   
-  /* .issue-book-header {
+  .issue-book-header {
+    width: 100%;
+    max-width: 600px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid #e0e0e0;
-    padding-bottom: 10px;
+    margin-bottom: 20px;
   }
   
   .issue-book-header h3 {
     margin: 0;
-    font-size: 18px;
-    color: #333;
+    font-size: 24px;
+    color: #ffffff;
   }
   
   .close-button {
     background: none;
     border: none;
-    font-size: 18px;
+    font-size: 24px;
     color: #888;
     cursor: pointer;
   }
@@ -35,7 +39,12 @@
   }
   
   .issue-book-form {
-    margin-top: 20px;
+    width: 100%;
+    max-width: 600px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   }
   
   .form-row {
@@ -78,4 +87,4 @@
   .issue-book-button:hover {
     background: #e88c00;
   }
-   */
+  
