@@ -56,10 +56,16 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 15px;
+    gap: 15px;
+    align-items: flex-start;
+    
   }
   
   .form-group {
     width: 48%;
+    margin-right: 100px;
+    margin-left: -50px;
+    
   }
   
   .form-group label {
