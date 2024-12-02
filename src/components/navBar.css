@@ -37,9 +37,13 @@ ul{
     color: white;
     border-radius: 4px;
     cursor: pointer;
-    font-size: 1rem;
+    font-size: 15px;
+    
+
 }
 .navB ul li button:hover {
     background-color: #d48a00; 
     transition: background-color 0.3s ease; 
+    transform: scale(1.05);
+    
 }

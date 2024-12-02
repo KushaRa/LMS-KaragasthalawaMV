@@ -1,12 +1,14 @@
 import './App.css';
-import NavBar from './components/navBar';
+import Home from './pages/Home';
 import IssueBook from './components/issueBook/issueBook';
+
 
 function App() {
   return (
     <div className="App">
-     <NavBar />
-     <IssueBook />
+     <Home />
+     <IssueBook  />
+    
     </div>
   );
 }
