@@ -6,8 +6,8 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    font-family: Arial, sans-serif;
+    align-items: left;
+    /* font-family: Arial, sans-serif; */
     padding: 20px;
   }
   
@@ -21,9 +21,12 @@
   }
   
   .issue-book-header h3 {
-    margin: 0;
+    /* margin: 0; */
     font-size: 24px;
     color: #ffffff;
+    margin-top: -550px;
+    margin-left: 45px;
+    
   }
   
   .close-button {
@@ -32,6 +35,8 @@
     font-size: 24px;
     color: #888;
     cursor: pointer;
+    margin-top: -550px;
+    margin-right: -550px;
   }
   
   .close-button:hover {
