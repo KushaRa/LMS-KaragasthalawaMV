@@ -6,7 +6,7 @@ import IssueBook from './components/issueBook/issueBook';
 function App() {
   return (
     <div className="App">
-     <Home />
+    <Home/>
      <IssueBook  />
     
     </div>

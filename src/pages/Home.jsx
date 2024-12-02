@@ -1,5 +1,6 @@
 import React from 'react';
 import NavBar from '../components/navBar'; 
+import SearchIcon from "@mui/icons-material/Search";
 import './Home.css';
 
 const Home = () => {
@@ -15,7 +16,11 @@ const Home = () => {
       </div>
 
       <div className='summaryTable'>
-        <span>This is summary table</span>
+        
+        <div className='searchbar'>
+        <input className='search1' placeholder='Sarch For The Book'></input>
+        <button><SearchIcon style={{ color: "black",marginTop:'10px'}} /></button>
+        </div>
       </div>
       
     </div>
