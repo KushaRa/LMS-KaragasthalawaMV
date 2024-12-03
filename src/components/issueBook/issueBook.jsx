@@ -7,10 +7,9 @@ const IssueBook = () => {
       <div className="issue-book-header">
         <h3>Issue Book</h3>
         <button className="close-button">×</button>
-      </div>
-      {/* <form className="issue-book-form">
+        <form className="issue-book-form">
         <div className="form-row">
-          <div className="form-group">
+           <div className="form-group">
             <label htmlFor="book-id">Book ID</label>
             <input type="text" id="book-id" placeholder="Enter Book ID" />
           </div>
@@ -39,8 +38,13 @@ const IssueBook = () => {
             <input type="date" id="end-issue-date" />
           </div>
         </div>
-        <button type="submit" className="issue-book-button">Issue Book</button>
-      </form> */}
+        <button type="submit" className="issue-book-button">Issue Book</button> 
+      </form>  
+
+
+
+      </div>
+      
     </div>
   );
 };
