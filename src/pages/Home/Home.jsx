@@ -1,12 +1,12 @@
 import React from "react";
-import NavBar from "../components/Navbar/navBar";
+// import NavBar from "../components/Navbar/navBar";
 import SearchIcon from "@mui/icons-material/Search";
 import "./Home.css";
 
 const Home = () => {
   return (
     <>
-      <NavBar />
+      {/* <NavBar /> */}
       <div className="home">
         <div className="buttonSection">
           <span>Add/Issue/Return Books</span>
