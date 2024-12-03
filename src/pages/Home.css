@@ -1,0 +1,77 @@
+.summaryTable {
+   
+   margin-left: 10px;
+   
+  }
+
+.home{
+    display: flex;
+    margin-top: 20px;
+   
+    
+}
+
+.buttonSection{
+    height: 800px;
+    background-color:white;
+    flex:8%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    row-gap: 10px;
+    align-items: center;
+
+    
+}
+
+
+.buttonSection span{
+    margin-left: 5px;
+    text-align: left;
+    color: gray;
+    margin-top: 10px;
+}
+
+.buttonSection button{
+    width: 120px;
+    height: 40px;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    background-color: green;
+    color: white;
+    box-shadow: none;
+    border: none;
+}
+
+.buttonSection button:hover{
+    background-color: rgb(1, 100, 1);
+    transition: background-color 0.3s ease;
+    transform: scale(1.05);
+}
+
+.summaryTable{
+    flex: 70%;
+    }
+
+.searchbar{
+    display: flex;
+    align-items: center;
+    margin-left:20px;
+    margin-top: 10px;
+}
+.search1{
+    padding: 10px;
+    border: 2px solid #090909;
+    border-radius: 15px;
+    width: 350px;
+    font-size: 14px;
+}
+.searchbar button{
+    background-color: white;
+    border:2px solid #090909;   
+    border-radius: 18px;
+    margin-left: 8px;
+    cursor: pointer;
+}
