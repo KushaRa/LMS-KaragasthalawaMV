@@ -5,9 +5,12 @@ import './issueBook.css';
 
 function IssueBook() {
   return (
+
+    <div>
+      <h2 className="issue-book-title">Issue Book</h2>
     
     <div className="issue-book-container">
-      <h2 className="issue-book-title">Issue Book</h2>
+      
 
       {/* First Container */}
       <div className="form-section">
@@ -42,6 +45,7 @@ function IssueBook() {
       </div>
 
       <button className="issue-book-button">Issue Book</button>
+    </div>
     </div>
   );
 }
