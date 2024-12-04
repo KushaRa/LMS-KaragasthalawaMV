@@ -1,6 +1,6 @@
 import './App.css';
 import NavBar from './components/navBar';
-import IssueBook from './components/issueBook/issueBook';
+import IssueBook from './pages/issueBook/issueBook';
 
 function App() {
   return (
