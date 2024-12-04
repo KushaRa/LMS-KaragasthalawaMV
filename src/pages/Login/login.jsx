@@ -1,10 +1,13 @@
 import React from "react";
 import "./login.css";
+import Comnav from "../../components/ComNav/comnav";
 import { MdOutlineMailLock } from "react-icons/md";
 import { TbLockPassword } from "react-icons/tb";
 
 const Login = () => {
   return (
+    <>
+    <Comnav />
     <div className="loginpg">
       <div className="box">
         <div className="content">
@@ -38,6 +41,7 @@ const Login = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
