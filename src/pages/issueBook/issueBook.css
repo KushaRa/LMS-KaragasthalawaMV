@@ -6,7 +6,7 @@
   max-width: 1100px;
   margin: auto;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-
+ 
 
 }
 
@@ -63,17 +63,21 @@
 
 /* Button Styling */
 .issue-book-button {
-  /* display: block; */
+  /* display: block;  */
   width: 180px;
-  padding: 10px;
+  /* padding: 10px; */
   background-color: #f77f00;
   color: white;
   font-size: 16px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  margin-top: 20px;
-  align-items: center;
+  /* margin-top: 20px; */
+  /* align-items: center; */
+margin-left: 600px;
+margin-top: 20px;
+ height: 45px;
+  
 }
 
 .issue-book-button:hover {
