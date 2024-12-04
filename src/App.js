@@ -1,10 +1,14 @@
+
+
+import IssueBook from './pages/issueBook/issueBook';
+
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 // import NavBar from "./components/Navbar/navBar";
 import Login from "./pages/Login/login";
 import Home from "./pages/Home/Home";
-import IssueBook from "./components/issueBook/issueBook";
 import Hero from "./pages/Hero/hero";
+
 
 const App = () => {
   return (

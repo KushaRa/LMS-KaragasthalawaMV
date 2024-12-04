@@ -23,6 +23,7 @@
   font-size: 15px;
   margin-top: 2px;
   font-weight: lighter;
+  margin-bottom: 50px;
 }
 
 .email,
@@ -30,9 +31,15 @@
   width: 450px;
   align-items: baseline;
   justify-content: center;
+  margin-top: 10px;
+  font-size: 15px;
+  border-radius: 5px;
+  padding: 8px;
 }
 
 .inputform {
   align-items: center;
   justify-content: center;
+  padding-left: 64px;
 }
+

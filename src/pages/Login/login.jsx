@@ -1,5 +1,7 @@
 import React from "react";
 import "./login.css";
+import { MdOutlineMailLock } from "react-icons/md";
+import { TbLockPassword } from "react-icons/tb";
 
 const Login = () => {
   return (
@@ -18,6 +20,7 @@ const Login = () => {
                 class="email"
                 placeholder="abc@gmail.com"
               />
+              <MdOutlineMailLock className="icons" />
             </div>
             <div className="password">
               <input
@@ -26,6 +29,7 @@ const Login = () => {
                 class="password"
                 placeholder="Abc@2025"
               />
+              <TbLockPassword className="icons" />
             </div>
           </form>
         </div>
