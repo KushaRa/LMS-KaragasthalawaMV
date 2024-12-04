@@ -9,16 +9,26 @@
   background-color: whitesmoke;
   width: 621px;
   height: 426px;
-  padding-top: 20px;
+  padding-top: 10px;
+  align-items: flex-start;
+  justify-items: flex-start;
 }
+
+.box:hover {
+  transform: scale(1.02);
+  transition: 0.5s; /* Slight zoom on hover */
+}
+
 .content {
   padding-left: 64px;
+  padding-top: 30px;
 }
 
 .loginpg .box .content h1 {
   font-size: 22px;
   margin-bottom: 0px;
 }
+
 .content h2 {
   font-size: 15px;
   margin-top: 2px;
@@ -29,17 +39,74 @@
 .email,
 .password {
   width: 450px;
-  align-items: baseline;
+  align-items: center;
   justify-content: center;
   margin-top: 10px;
   font-size: 15px;
   border-radius: 5px;
   padding: 8px;
+  display: flex;
+  flex-direction: row;
+  border: none;
 }
 
 .inputform {
   align-items: center;
   justify-content: center;
   padding-left: 64px;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  justify-content: flex-start;
 }
 
+.icons {
+  align-items: center;
+  justify-content: baseline;
+  font-size: 30px;
+  padding-left: 8px;
+  padding-top: 9px;
+}
+
+.email-input {
+  width: 100%;
+  padding: 10px;
+  padding-left: 40px; /* Add padding for the icon */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.Signin {
+  margin-top: 15px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #f77f00;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  align-items: center;
+  position: relative;
+  left: 70px;
+  width: 300px;
+}
+
+.Signin:hover {
+  background-color: #e18a44;
+  transform: translateY(-2px);
+  transition: 0.5s;
+}
+
+.btn {
+  align-items: baseline;
+  justify-items: baseline;
+  padding-top: 15px;
+}
+
+.Signin:hover {
+  background-color: #e18a44;
+}

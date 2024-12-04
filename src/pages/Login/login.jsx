@@ -18,7 +18,7 @@ const Login = () => {
                 type="text"
                 id="email"
                 class="email"
-                placeholder="abc@gmail.com"
+                placeholder="abc@gmail.com  "
               />
               <MdOutlineMailLock className="icons" />
             </div>
@@ -30,6 +30,9 @@ const Login = () => {
                 placeholder="Abc@2025"
               />
               <TbLockPassword className="icons" />
+            </div>
+            <div className="btn">
+              <button className="Signin">Sign In</button>
             </div>
           </form>
         </div>
