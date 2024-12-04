@@ -28,6 +28,7 @@
 .loginpg .box .content h1 {
   font-size: 22px;
   margin-bottom: 0px;
+  font-weight: bold;
 }
 
 .content h2 {
@@ -66,7 +67,7 @@
 .icons {
   align-items: center;
   justify-content: baseline;
-  font-size: 30px;
+  font-size: 35px;
   padding-left: 8px;
   padding-top: 9px;
 }

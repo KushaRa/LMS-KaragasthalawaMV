@@ -1,7 +1,7 @@
 import React from "react";
 import "./login.css";
 import Comnav from "../../components/ComNav/comnav";
-import { MdOutlineMailLock } from "react-icons/md";
+import { IoIosContact } from "react-icons/io";
 import { TbLockPassword } from "react-icons/tb";
 
 const Login = () => {
@@ -23,7 +23,7 @@ const Login = () => {
                 class="email"
                 placeholder="abc@gmail.com  "
               />
-              <MdOutlineMailLock className="icons" />
+              <IoIosContact className="icons" />
             </div>
             <div className="password">
               <input
