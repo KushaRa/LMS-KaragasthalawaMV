@@ -4,9 +4,10 @@ import './navBar.css';
 const NavBar = () => {
   return (
     <div className='navB'>
-        <nav>
-            <div className='logoN'>LMS</div>
-            <ul>                
+        <nav className='ord1'>
+        <div className='logoN'>LMS</div>
+            <ul>            
+            <li></li>  
                 <li>Dashboard</li>
                 <li>Books</li>
                 <li>Members</li>

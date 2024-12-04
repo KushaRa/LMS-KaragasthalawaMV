@@ -1,0 +1,15 @@
+.loginpg {
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+    height: 100vh;          
+  }
+  
+  .box {
+    background-color: whitesmoke;
+    width: 
+    621px;
+    height: 426px;
+    padding-top: 20px;
+  }
+  
