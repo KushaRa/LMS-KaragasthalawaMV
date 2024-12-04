@@ -1,11 +1,13 @@
 /* General Container Styling */
 .issue-book-container {
-  background-color: #fbf6f6;
+  background-color: white;
   padding: 20px;
   border-radius: 10px;
   max-width: 1100px;
   margin: auto;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  height: 400px;
+  margin-top: 40px;
  
 
 }
@@ -23,6 +25,7 @@
   margin-bottom: 20px;
   font-family: 'Arial', sans-serif;
   margin-left: 50px;
+  margin-top: 40px;
 }
 
 /* Form Sections */
