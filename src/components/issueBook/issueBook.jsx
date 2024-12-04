@@ -14,6 +14,7 @@ function IssueBook() {
 
       {/* First Container */}
       <div className="form-section">
+      <div className="row">
         <div className="input-group">
           <label htmlFor="bookId">Book ID</label>
           <input type="text" id="bookId" placeholder="Enter Book ID" />
@@ -31,6 +32,7 @@ function IssueBook() {
           <input type="text" id="memberName" placeholder="Enter Member Name" />
         </div>
       </div>
+      </div>
 
       {/* Second Container */}
       <div className="form-section">
@@ -44,8 +46,9 @@ function IssueBook() {
         </div>
       </div>
 
-      <button className="issue-book-button">Issue Book</button>
+      
     </div>
+    <button className="issue-book-button">Issue Book</button>
     </div>
   );
 }
