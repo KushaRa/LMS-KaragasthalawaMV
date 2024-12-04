@@ -10,6 +10,13 @@
 
 }
 
+.row {
+  display: flex;
+  /* justify-content: space-between; */
+  gap: 50px;
+  margin-bottom: 50px;
+}
+
 .issue-book-title {
   text-align: left;
   color: #333;
@@ -33,7 +40,7 @@
 .input-group {
   display: flex;
   flex-direction: column;
-  margin-bottom: 15px;
+  margin-bottom: 15px; 
 
   flex: 1;
 }
@@ -51,12 +58,13 @@
   border: 1px solid #ddd;
   border-radius: 4px;
   font-size: 14px;
+  width: 100%;
 }
 
 /* Button Styling */
 .issue-book-button {
-  display: block;
-  width: 100%;
+  /* display: block; */
+  width: 180px;
   padding: 10px;
   background-color: #f77f00;
   color: white;
@@ -65,6 +73,7 @@
   border-radius: 5px;
   cursor: pointer;
   margin-top: 20px;
+  align-items: center;
 }
 
 .issue-book-button:hover {
