@@ -3,6 +3,7 @@ import "./login.css";
 import Comnav from "../../components/ComNav/comnav";
 import { IoIosContact } from "react-icons/io";
 import { TbLockPassword } from "react-icons/tb";
+import { Link } from 'react-router-dom';
 
 const Login = () => {
   return (
@@ -35,7 +36,7 @@ const Login = () => {
               <TbLockPassword className="icons" />
             </div>
             <div className="btn">
-              <button className="Signin">Sign In</button>
+            <Link to="/home"><button className="Signin">Sign In</button></Link>
             </div>
           </form>
         </div>
@@ -46,3 +47,7 @@ const Login = () => {
 };
 
 export default Login;
+<li>
+<Link to="/internships">Internships</Link>
+</li>
+
