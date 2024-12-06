@@ -1,16 +1,21 @@
-import React from "react";
+import React, {useState} from "react";
 import NavBar from "../../components/Navbar/navBar";
 import SearchIcon from "@mui/icons-material/Search";
 import "./Home.css";
 
 const Home = () => {
+  const[formOpen, setFormOpen]= useState(false);
+  const handleOpen=()=>{
+    setFormOpen(true);
+  }
+
   return (
     <>
       <NavBar />
       <div className="home">
         <div className="buttonSection">
           <span>Add/Issue/Return Books</span>
-          <button className="AddBook">Add Book</button>
+          <button className="AddBook" onclick={handleOpen}>Add Book</button>
           <button className="IssueBook">Issue Book</button>
           <button className="ReturnBook">Return Book</button>
         </div>
