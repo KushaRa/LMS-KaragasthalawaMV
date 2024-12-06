@@ -1,13 +1,19 @@
 import React, {useState} from "react";
 import NavBar from "../../components/Navbar/navBar";
 import SearchIcon from "@mui/icons-material/Search";
+import AddBook from '../../pages/AddBook/addBook';
 import "./Home.css";
 
 const Home = () => {
   const[formOpen, setFormOpen]= useState(false);
+ 
   const handleOpen=()=>{
     setFormOpen(true);
-  }
+  };
+
+const handleClose =()=>{
+  setFormOpen(false);
+}
 
   return (
     <>
@@ -29,7 +35,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-    </>
+        </>
   );
 };
 

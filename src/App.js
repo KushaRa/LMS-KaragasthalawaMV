@@ -5,13 +5,15 @@ import Login from "./pages/Login/login";
 import Home from "./pages/Home/Home";
 //import Hero from "./pages/Hero/hero";
 import IssueBook from './pages/issueBook/issueBook';
+import AddBook from "./pages/AddBook/addBook";
 
 
 const App = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Login />} />
+      <Route path="/" element={<AddBook />} />
+        
         <Route path="home" element={<Home />} />
         <Route path="issuebook" element={<IssueBook />} />
       </Routes>
@@ -21,5 +23,5 @@ const App = () => {
 
 export default App;
 
-
+//<Route path="/" element={<Login />} />
 // <Route path="hero" element={<Hero />} />
