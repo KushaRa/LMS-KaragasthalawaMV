@@ -6,8 +6,10 @@ const app = express();
 
 require("dotenv").config();
 const port = process.env.PORT;
+
 require("./DB/connection");
 app.use(express.json());
+
 app.get("/", (req, res) => {
   res.send("Hello World");
 });
