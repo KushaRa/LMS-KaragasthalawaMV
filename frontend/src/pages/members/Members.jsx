@@ -1,54 +1,77 @@
-import React, { useEffect, useState } from 'react';
-import NavBar from '../../components/Navbar/navBar'; // Import NavBar
-import { fetchMembers } from '../../services/memberService'; // Import member service
-import './Members.css';
+import React, { useState, useEffect } from 'react';
+import './Members.css'; // Link to the CSS file
+import NavBar from '../../components/Navbar/navBar';
+import axios from 'axios';
 
 const Members = () => {
   const [members, setMembers] = useState([]);
-  const [error, setError] = useState('');
+  const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
-    const getMembers = async () => {
-      try {
-        const response = await fetchMembers();
+    // Fetch members data
+    axios.get('/api/members') // Adjust the API endpoint as needed
+      .then((response) => {
         setMembers(response.data);
-      } catch (err) {
-        setError('Failed to fetch members.');
-      }
-    };
-
-    getMembers();
+      })
+      .catch((error) => {
+        console.error('Error fetching members:', error);
+      });
   }, []);
 
-  if (error) {
-    return <p>{error}</p>;
-  }
+  const filteredMembers = members.filter(member =>
+    member.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   return (
     <div>
-      <NavBar /> {/* Include NavBar */}
+      <NavBar />
       <div className="members-container">
-        <h1>Members List</h1>
-        <table className="members-table">
-          <thead>
-            <tr>
-              <th>Card Number</th>
-              <th>Name</th>
-              <th>Grade</th>
-              <th>Contact</th>
-            </tr>
-          </thead>
-          <tbody>
-            {members.map((member) => (
-              <tr key={member._id}>
-                <td>{member.cardNumber}</td>
-                <td>{member.name}</td>
-                <td>{member.grade}</td>
-                <td>{member.contact}</td>
+        {/* Sidebar Section */}
+        <div className="sidebar">
+          <button className="add-member-btn">Add Member</button>
+          <div className="total-members">Total Members: {members.length}</div>
+        </div>
+
+        {/* Table Section */}
+        <div className="table-section">
+          {/* Search Bar Above Table */}
+          <div className="search-bar">
+            <input
+              type="text"
+              placeholder="Search for the member"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+            />
+          </div>
+
+          {/* Table */}
+          <table>
+            <thead>
+              <tr>
+                <th>Record Number</th>
+                <th>Name</th>
+                <th>Card Number</th>
+                <th>Grade</th>
+                <th>Index Number</th>
+                <th>Phone Number</th>
+                <th>Address</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {filteredMembers.map((member, index) => (
+                <tr key={index}>
+                  <td>{member.recordNumber}</td>
+                  <td>{member.name}</td>
+                  <td>{member.cardNumber}</td>
+                  <td>{member.grade}</td>
+                  <td>{member.indexNumber}</td>
+                  <td>{member.phoneNumber}</td>
+                  <td>{member.address}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   );
