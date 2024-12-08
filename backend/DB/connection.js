@@ -6,6 +6,9 @@ if (!DB) {
     process.exit(1);
 }
 
+console.log(`Connection ${DB}`);
+
+
 mongoose.connect(DB)
     .then(() => {
         console.log("Connection successful!");
