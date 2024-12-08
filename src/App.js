@@ -12,9 +12,10 @@ const App = () => {
   return (
     <Router>
       <Routes>
-      <Route path="/" element={<AddBook />} />
-        
-        <Route path="home" element={<Home />} />
+        <Route path="/" element={<Login  />} />
+        {/*<Route path="addbook" element={<AddBook />} />*/}
+        <Route path="addbook" element={<AddBook />} />
+         <Route path="home" element={<Home />} />
         <Route path="issuebook" element={<IssueBook />} />
       </Routes>
     </Router>
@@ -23,5 +24,6 @@ const App = () => {
 
 export default App;
 
-//<Route path="/" element={<Login />} />
+
+
 // <Route path="hero" element={<Hero />} />

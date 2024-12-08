@@ -9,11 +9,32 @@
     font-family: "Arial", sans-serif;
     color: #333;
   }
+  .heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+  }
+
+  .closeButton {
+    background: none; /* Remove default button background */
+    border: none; /* Remove default border */
+    cursor: pointer; /* Add a pointer cursor */
+    font-size: 1.5rem; /* Adjust the size of the CloseIcon */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #555; /* Icon color */
+  }
+
+  .closeButton:hover {
+    color: #007bff; /* Change color on hover */
+  }
   
-  .addNewBook h2 {
-    text-align: left;
-    color: #000000;
-    margin-bottom: 20px;
+  .heading h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #333;
   }
   
   /* Form Styling */
@@ -60,7 +81,7 @@
   }
   
   /* Submit Button Styling */
-  button {
+  .submitButton {
     padding: 10px 15px;
     background-color: #007bff;
     color: #fff;
@@ -73,7 +94,7 @@
     transition: background-color 0.3s ease;
   }
   
-  button:hover {
+  .submitButton :hover {
     background-color: #0056b3;
   }
   

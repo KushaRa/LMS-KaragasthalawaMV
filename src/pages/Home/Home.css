@@ -68,3 +68,7 @@
   margin-left: 8px;
   cursor: pointer;
 }
+
+.popupOverlay {
+  display: flex; /* Ensure it's not set to `display: none` */
+}
