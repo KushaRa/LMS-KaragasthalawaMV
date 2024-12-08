@@ -17,12 +17,21 @@ const Home = () => {
   };
 
   return (
-    <>
+    <div className="homesec">
       <NavBar />
       <div className="home">
         <div className="buttonSection">
           <span>Add/Issue/Return Books</span>
-          <button className="AddBook" onClick={handleOpen}>Add Book</button>
+          <div className="addBookContainer">
+                <button className="AddBook" onClick={handleOpen}>Add Book</button>
+
+                {/* Popup Form */}
+                {formOpen && (
+                  <div className="popupContent">
+                    <AddBook onClose={handleClose} />
+                  </div>
+                )}
+          </div>
           <button className="IssueBook">Issue Book</button>
           <button className="ReturnBook">Return Book</button>
         </div>
@@ -38,14 +47,8 @@ const Home = () => {
       </div>
 
       {/* Popup Form */}
-      {formOpen && (
-        <div className="popupOverlay">
-           <div className="popupContent">
-            <AddBook onClose={handleClose} />
-          </div>
-        </div>
-      )}
-    </>
+      
+    </div>
   );
 };
 
