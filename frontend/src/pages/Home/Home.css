@@ -2,10 +2,15 @@
   margin-left: 10px;
 }
 
+.homesec{
+
+}
+
 .home {
   display: flex;
   margin-top: 20px;
 }
+
 
 .buttonSection {
   height: 800px;
@@ -56,15 +61,45 @@
 }
 .search1 {
   padding: 10px;
-  border: 2px solid #090909;
+  border: 2px solid #ffffff;
   border-radius: 15px;
   width: 350px;
   font-size: 14px;
 }
 .searchbar button {
   background-color: white;
-  border: 2px solid #090909;
+  border: 2px solid #ffffff;
   border-radius: 18px;
   margin-left: 8px;
   cursor: pointer;
+}
+
+.popupOverlay {
+ /* position: relative;
+  max-width: 600px; */
+  top: 20px; /* Adjust this value to position it closer or further from the top */
+  display: flex; 
+  border-radius: 8px;
+  width: 100%; /* You can adjust this to control the width */
+ /* Optional: Set a max width for the popup */
+  
+}
+
+.addBookContainer {
+  position: relative; /* This sets the reference point for the popup */
+  display: inline-block;
+}
+
+/* Popup styles */
+.popupContent {
+  position: absolute; /* Position it relative to the container */
+  margin-bottom: 15px;
+  top: 0; /* Align it with the top of the button */
+  left: 200%; /* Adjust to place it on the right side of the button */
+  background-color: rgb(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 400px; /* Width of the popup */
+  z-index: 1000; /* Ensure it appears on top of other elements */
 }
