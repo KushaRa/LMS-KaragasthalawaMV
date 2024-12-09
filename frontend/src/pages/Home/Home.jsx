@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import NavBar from "../../components/Navbar/navBar";
 import SearchIcon from "@mui/icons-material/Search";
-import AddBook from "../../pages/AddBook/addBook";
+import AddBook from "../Addbook/addBook";
 import "./Home.css";
 
 const Home = () => {
