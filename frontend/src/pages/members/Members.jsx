@@ -2,14 +2,17 @@ import React, { useState, useEffect } from 'react';
 import './Members.css'; // Link to the CSS file
 import NavBar from '../../components/Navbar/navBar';
 import axios from 'axios';
+import AddMemberForm from './addMemberForm/AddMember'; // Import the AddMemberForm component
 
 const Members = () => {
   const [members, setMembers] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
+  const [showAddMemberForm, setShowAddMemberForm] = useState(false);
 
   useEffect(() => {
     // Fetch members data
-    axios.get('/api/members') // Adjust the API endpoint as needed
+    axios
+      .get('/api/members') // Adjust the API endpoint as needed
       .then((response) => {
         setMembers(response.data);
       })
@@ -18,7 +21,7 @@ const Members = () => {
       });
   }, []);
 
-  const filteredMembers = members.filter(member =>
+  const filteredMembers = members.filter((member) =>
     member.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
@@ -28,7 +31,12 @@ const Members = () => {
       <div className="members-container">
         {/* Sidebar Section */}
         <div className="sidebar">
-          <button className="add-member-btn">Add Member</button>
+          <button
+            className="add-member-btn"
+            onClick={() => setShowAddMemberForm(true)} // Show the form when clicked
+          >
+            Add Member
+          </button>
           <div className="total-members">Total Members: {members.length}</div>
         </div>
 
@@ -73,6 +81,13 @@ const Members = () => {
           </table>
         </div>
       </div>
+
+      {/* Conditionally render AddMemberForm */}
+      {showAddMemberForm && (
+        <AddMemberForm
+          onClose={() => setShowAddMemberForm(false)} // Pass onClose handler to the form
+        />
+      )}
     </div>
   );
 };
