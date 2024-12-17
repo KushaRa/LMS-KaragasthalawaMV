@@ -5,12 +5,14 @@
 /.pnp
 .pnp.js
 
+
 # Ignore system and cache files
 AppData/
 node_modules/
 *.log
 .DS_Store
 Thumbs.db
+.env.local
 
 # testing
 /coverage
