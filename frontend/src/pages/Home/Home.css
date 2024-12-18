@@ -1,5 +1,7 @@
-.summaryTable {
-  margin-left: 10px;
+/* General Layout */
+.homesec {
+  display: flex;
+  flex-direction: column;
 }
 
 .home {
@@ -7,6 +9,13 @@
   margin-top: 20px;
 }
 
+.container1 {
+  display: flex;
+  flex-direction: row;
+  column-gap: 100px;
+}
+
+/* Button Section */
 .buttonSection {
   height: 800px;
   background-color: white;
@@ -34,18 +43,20 @@
   font-weight: bold;
   background-color: green;
   color: white;
-  box-shadow: none;
   border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .buttonSection button:hover {
   background-color: rgb(1, 100, 1);
-  transition: background-color 0.3s ease;
   transform: scale(1.05);
 }
 
+/* Search Section */
 .summaryTable {
   flex: 70%;
+  margin-left: 10px;
 }
 
 .searchbar {
@@ -54,6 +65,7 @@
   margin-left: 20px;
   margin-top: 10px;
 }
+
 .search1 {
   padding: 10px;
   border: 2px solid #090909;
@@ -61,10 +73,76 @@
   width: 350px;
   font-size: 14px;
 }
+
 .searchbar button {
   background-color: white;
   border: 2px solid #090909;
   border-radius: 18px;
   margin-left: 8px;
   cursor: pointer;
+}
+
+/* Popup Backdrop */
+.popupBackdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+/* Popup Content */
+
+
+.popupCloseButton {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #555;
+  font-weight: bold;
+}
+
+.popupCloseButton:hover {
+  color: #000;
+}
+
+/* Input and Form Styles */
+.popupContent input,
+.popupContent select {
+  width: 100%;
+  margin: 8px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.popupContent h3 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.formSubmitButton {
+  width: 100%;
+  padding: 10px;
+  background-color: #ff7f41;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.formSubmitButton:hover {
+  background-color: #e66b36;
 }

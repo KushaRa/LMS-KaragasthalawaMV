@@ -20,36 +20,45 @@ const Home = () => {
     <div className="homesec">
       <NavBar />
       <div className="home">
+        <div className="container1">
         <div className="buttonSection">
           <span>Add/Issue/Return Books</span>
           <div className="addBookContainer">
                 <button className="AddBook" onClick={handleOpen}>Add Book</button>
-
-                {/* Popup Form */}
-                {formOpen && (
-                  <div className="popupContent">
-                    <AddBook onClose={handleClose} />
-                  </div>
-                )}
-          </div>
+          </div>          
+          
           <button className="IssueBook">Issue Book</button>
           <button className="ReturnBook">Return Book</button>
+        </div>
+        
+               {/* Popup Form */}
+          {formOpen && (
+            <div className="popupBackdrop">
+              <div className="popupContent">
+                <button className="popupCloseButton" onClick={handleClose}>
+                  &times;
+                </button>
+                <AddBook onClose={handleClose} />
+              </div>
+            </div>
+          )}
+        
         </div>
 
         <div className="summaryTable">
           <div className="searchbar">
-            <input className="search1" placeholder="Search For The Book"></input>
+            <input 
+            className="search1" 
+            placeholder="Search For The Book"></input>
             <button>
               <SearchIcon style={{ color: "black", marginTop: "10px" }} />
             </button>
           </div>
         </div>
-      </div>
-
-      {/* Popup Form */}
-      
+      </div> 
     </div>
   );
 };
 
 export default Home;
+
