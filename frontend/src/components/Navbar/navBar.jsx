@@ -2,6 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './navBar.css';
 
+import {  UserButton } from '@clerk/clerk-react'
+
+
 const NavBar = () => {
   return (
     <div className='navB'>
@@ -13,7 +16,9 @@ const NavBar = () => {
                 <li>Books</li>
                 <li><Link to="/members">Members</Link></li>
                 <li>About Us</li>
-                <li><button>Logout</button></li>
+                {/* <li><button>Logout</button></li> */}
+                <li><button><UserButton /></button></li>
+
 
             </ul>
         </nav>
