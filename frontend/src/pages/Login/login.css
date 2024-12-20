@@ -103,7 +103,7 @@
   transition: 0.5s;
 }
 
-.btn {
+.loginpg.btn {
   align-items: baseline;
   justify-items: baseline;
   padding-top: 15px;

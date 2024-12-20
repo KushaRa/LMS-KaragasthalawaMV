@@ -9,6 +9,8 @@
     justify-content: center; /* Center the content horizontally */
     align-items: center; /* Center the content vertically */
     position: relative; /* For stacking content */
+    display: flex;
+    flex-direction: column;
   }
   
   .hero::before {
@@ -47,6 +49,27 @@
     letter-spacing: 1px;
     opacity: 0.9;
     color: #fff; /* White color for the paragraph */
+  }
+
+  .btn{
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #f77f00;
+    color: whitesmoke;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  .btn:hover {
+    background-color: #e18a44;
+    transform: translateY(-2px);
+    transition: 0.5s;
   }
   
   

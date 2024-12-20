@@ -5,7 +5,6 @@ import { IoIosContact } from "react-icons/io";
 import { TbLockPassword } from "react-icons/tb";
 import { Link } from 'react-router-dom';
 
-import {  SignInButton } from "@clerk/clerk-react";
 
 const Login = () => {
   return (
@@ -18,7 +17,7 @@ const Login = () => {
           <h1>SIGN IN</h1>
           <h2>Sign in via user name and password</h2>
         </div>
-        <SignInButton />
+        
         <div className="inputform">
           <form action="submit">
             <div className="email">
