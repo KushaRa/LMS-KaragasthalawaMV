@@ -9,9 +9,6 @@ import Members from "./pages/members/Members";
 import Hero from "./pages/Hero/hero";
 
 
-
-
-
 const App = () => {
   return (
     <Router>

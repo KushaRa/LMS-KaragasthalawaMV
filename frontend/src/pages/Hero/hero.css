@@ -1,5 +1,5 @@
 .hero {
-    background-image: url("../../assets/hero-bg.png"); /* Path to your background image */
+    background-image: url("../../assets/lms.jpg"); /* Path to your background image */
     background-size: cover; /* Ensures the image covers the entire area */
     background-position: center; /* Centers the image */
     background-repeat: no-repeat; /* Prevents the image from repeating */
@@ -48,7 +48,7 @@
     font-style: italic;
     letter-spacing: 1px;
     opacity: 0.9;
-    color: #fff; /* White color for the paragraph */
+    color: #ff8e31; /* White color for the paragraph */
   }
 
   .btn{
