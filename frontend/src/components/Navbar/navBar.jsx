@@ -9,7 +9,7 @@ const NavBar = () => {
         <div className='logoN'>LMS</div>
             <ul>            
             <li></li>  
-                <li>Dashboard</li>
+                <li><Link to="/home">Dashboard</Link></li>
                 <li>Books</li>
                 <li><Link to="/members">Members</Link></li>
                 <li>About Us</li>
