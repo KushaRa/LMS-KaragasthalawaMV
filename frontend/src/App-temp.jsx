@@ -6,19 +6,28 @@ import Home from "./pages/Home/Home";
 //import Hero from "./pages/Hero/hero";
 import IssueBook from './pages/issueBook/issueBook';
 import Members from "./pages/members/Members";
+import Hero from "./pages/Hero/hero";
+
+
+
 
 
 const App = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Login />} />
+        <Route path="login" element={<Login />} />
+        {/* <Route path="/" element={<Hero />} /> */}
         <Route path="home" element={<Home />} />
         <Route path="issuebook" element={<IssueBook />} />
         <Route path="members" element={<Members />} />
+        <Route path="hero" element={<Hero />} />
       </Routes>
     </Router>
+   
   );
+
+
 };
 
 export default App;

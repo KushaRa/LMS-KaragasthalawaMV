@@ -1,0 +1,108 @@
+/* Container for the Add New Book popup */
+form {
+  background-size: cover;
+}
+
+.addNewBook {
+  background-color: #ffffff; /* White background for the form */
+  padding: 20px;
+  width: 700px;
+  max-width: 1000px; /* Set the maximum width of the form */
+  margin: 0 auto; /* Center horizontally */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add subtle shadow */
+  font-family: Arial, sans-serif; /* Clean font */
+}
+
+/* Heading section of the form */
+.addNewBook .heading {
+  display: flex;
+  justify-content: space-between; /* Title on the left, close button on the right */
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Flex container for rows */
+.row1,
+.row2 {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.labelCol {
+  display: flex;
+  flex-direction: column;
+  flex: 1; /* Ensures equal space for each column */
+}
+
+/* Labels */
+form label {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333333;
+}
+
+/* Input fields */
+form input[type="text"],
+form select {
+  width: 100%; /* Full width inside column */
+  padding: 10px;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+form input[type="text"]:focus,
+form select:focus {
+  outline: none;
+  border-color: #4caf50;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+/* Submit button */
+.submitButton {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background-color: #ff914d;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submitButton:hover {
+  background-color: #c56f3a; /* Darker green on hover */
+}
+
+/* Close button styling */
+.closeButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  color: #888888;
+}
+
+.closeButton:hover {
+  color: #ff5252;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 600px) {
+  .addNewBook {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .row1,
+  .row2 {
+    flex-direction: column; /* Stack inputs vertically on small screens */
+  }
+}
