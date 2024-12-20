@@ -5,6 +5,8 @@ import { IoIosContact } from "react-icons/io";
 import { TbLockPassword } from "react-icons/tb";
 import { Link } from 'react-router-dom';
 
+import {  SignInButton } from "@clerk/clerk-react";
+
 const Login = () => {
   return (
     <>
@@ -12,9 +14,11 @@ const Login = () => {
     <div className="loginpg">
       <div className="box">
         <div className="content">
+        
           <h1>SIGN IN</h1>
           <h2>Sign in via user name and password</h2>
         </div>
+        <SignInButton />
         <div className="inputform">
           <form action="submit">
             <div className="email">
@@ -37,6 +41,7 @@ const Login = () => {
             </div>
             <div className="btn">
             <Link to="/home"><button className="Signin">Sign In</button></Link>
+           
             </div>
           </form>
         </div>
@@ -47,7 +52,5 @@ const Login = () => {
 };
 
 export default Login;
-<li>
-<Link to="/internships">Internships</Link>
-</li>
+
 
