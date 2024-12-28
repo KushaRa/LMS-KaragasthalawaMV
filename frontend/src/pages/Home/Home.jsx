@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import NavBar from "../../components/Navbar/navBar";
 import SearchIcon from "@mui/icons-material/Search";
 import AddBook from "../AddBook/addBook";
+import BookTable from "../BookTable/bookTable";
 import "./Home.css";
 
 const Home = () => {
@@ -49,10 +50,13 @@ const Home = () => {
           <div className="searchbar">
             <input 
             className="search1" 
-            placeholder="Search For The Book"></input>
+            placeholder="Search For The Books"></input>
             <button>
               <SearchIcon style={{ color: "black", marginTop: "10px" }} />
             </button>
+          </div>
+          <div className="bkTab">
+            <BookTable/>
           </div>
         </div>
       </div> 
