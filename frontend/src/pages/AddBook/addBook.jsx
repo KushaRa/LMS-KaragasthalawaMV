@@ -32,18 +32,13 @@ const inputHandlers = (e) =>{
 
 const submitForm = async (e) => {
   e.preventDefault();
-  console.log("Submitting:", intBook); // Log the data being sent
   try {
     const response = await axios.post('http://localhost:5000/api/submit-book', intBook);
-    console.log("Response:", response); // Log the full response
-    if (response.status === 201) {
+    if (response.status === 200) {
       console.log("Book Submitted Successfully");
       alert("Book Submitted Successfully");
-      setBook(books); // Reset the form
-    } else {
-      console.log("Unexpected status code:", response.status);
-      alert("Failed to submit the book. Please try again.");
-    }
+    } 
+    setBook(books);
   } catch (err) {
     console.error("Error submitting the book:", err);
     alert("Book is not Submitted. Please try again.");
