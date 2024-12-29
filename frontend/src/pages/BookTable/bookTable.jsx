@@ -1,18 +1,19 @@
 import React from 'react';
+import './bookTable.css'
 
 const BookTable = () => {
   return (
-    <div>
+    <div className='bookDisplay'>
       <table>
-        <th>
-            <tr>Id</tr>
-            <tr>Name</tr>
-            <tr>Name</tr>
-            <tr>Name</tr>
-            <tr>Name</tr>
-            <tr>Name</tr>
-            <tr>Name</tr>
-        </th>
+        <tr>
+            <th>ID</th>
+            <th>Book Name</th>
+            <th>Author</th>
+            <th>Publisher</th>
+            <th>Entry Date</th>
+            <th>Category</th>
+            <th>Status</th>
+        </tr>
       </table>
     </div>
   );
