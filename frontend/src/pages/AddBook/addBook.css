@@ -34,6 +34,7 @@ form {
   display: flex;
   flex-direction: column;
   flex: 1; /* Ensures equal space for each column */
+  height:67px;
 }
 
 /* Labels */
@@ -58,8 +59,8 @@ form select {
 form input[type="text"]:focus,
 form select:focus {
   outline: none;
-  border-color: #4caf50;
-  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+  border-color: #000000;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
 
 /* Submit button */
@@ -97,7 +98,7 @@ form select:focus {
 /* Media query for smaller screens */
 @media (max-width: 600px) {
   .addNewBook {
-    width: 90%;
+    width: 100%;
     padding: 15px;
   }
 
