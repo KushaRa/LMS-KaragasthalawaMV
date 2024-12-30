@@ -46,8 +46,8 @@ const Home = () => {
         
         </div>
 
-        <div className="summaryTable">
-        <div className="search-bar">
+        <div className="summaryTable" style={{backgroundColor:"white"}}>
+        <div className="search-bar" style={{margin:'20px'}}>
             <input
               type="text"
               placeholder="Search for the book"
@@ -56,8 +56,8 @@ const Home = () => {
             />
           </div>
 
-          <div className="bkTab">
-            <BookTable/>
+          <div className="bkTab" style={{margin:'20px'}}>
+            <BookTable />
           </div>
         </div>
       </div> 
