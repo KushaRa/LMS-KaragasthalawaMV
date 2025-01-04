@@ -1,6 +1,7 @@
 import React ,{useState, useEffect} from 'react';
 import './bookTable.css'
 import axios from 'axios';
+//import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 //import BookCard from '../EditDelete Book/editBook';
 
 
@@ -8,7 +9,7 @@ const BookTable = () => {
   const [data,setData]=useState([]);
   const [error, setError] = useState('');
 
-  const [modal, modalDetails] = useState(null);
+  //const [modal, modalDetails] = useState(null);
 
  useEffect (()=>{
   const fetchData = async() =>{
@@ -24,12 +25,9 @@ const BookTable = () => {
  fetchData();
 },[]);
 
-const bookOpen = (item) =>{
-  modalDetails(item);
-}
-const closeModal = () => {
-  modalDetails(null); // Close the modal
-};
+
+
+
 //if (loading) return <div>Loading...</div>;
 if (error) return <div>Error: {error}</div>;
 
@@ -55,7 +53,7 @@ if (error) return <div>Error: {error}</div>;
         </tr>
         <tbody>
       {data.map((item, index) => (
-        <tr key={index} onClick={() =>bookOpen(item)}>
+        <tr key={index}>
           <td>{item.bookID}</td>
           <td>{item.bookName}</td>
           <td>{item.bookclassificationNum}</td>
@@ -74,22 +72,7 @@ if (error) return <div>Error: {error}</div>;
       ))}
 </tbody>
       </table>
- {/* Modal */}
-      {modal && (
-        <div className="model">
-        <div className="overlay">
-            <div className="content">
-                <h2>{modal.bookName}</h2>
-                <p>Author: {modal.author}</p>
-                <p>Publisher: {modal.publisher}</p>
-                <p>Price: {modal.price}</p>
-                {/* Add more details as needed */}
-                <button onClick={closeModal}>Close</button>
-                </div>    
-            </div>
-  </div>
-      )}
-
+ 
 
     </div>
   );

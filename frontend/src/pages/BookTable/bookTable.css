@@ -29,6 +29,7 @@ th {
   width: 100%;
   height: 100%;
   display: flex;
+  text-align: center;
   justify-content: center; /* Centers horizontally */
   align-items: center;    /* Centers vertically */
   z-index: 999;
@@ -38,6 +39,8 @@ th {
 /* Overlay (Clickable Area) */
 .overlay {
   position: absolute;
+  margin-top: 100px;
+  margin-left: 600px;
   top: 0;
   left: 0;
   width: 100%;
@@ -47,6 +50,9 @@ th {
 }
 
 /* Content Container */
+.content h2{
+  text-decoration:underline;
+}
 .content {
   position: relative;
   background-color: #ffffff;
@@ -56,6 +62,6 @@ th {
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   z-index: 1000;
-  text-align: center;
+  text-align: left;
   align-items: left;
 }
