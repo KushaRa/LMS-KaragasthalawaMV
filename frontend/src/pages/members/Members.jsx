@@ -12,7 +12,7 @@ const Members = () => {
   const [selectedMember, setSelectedMember] = useState(null);
   const [editingMember, setEditingMember] = useState(false);
 
-  // Fetch members from the backend
+  // Get members from the backend
   const fetchMembers = async () => {
     try {
       const response = await axios.get("http://localhost:5000/api/members");
