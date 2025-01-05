@@ -6,6 +6,7 @@ form {
 .addNewBook {
   background-color: #ffffff; /* White background for the form */
   padding: 20px;
+  height:auto;
   width: 700px;
   max-width: 1000px; /* Set the maximum width of the form */
   margin: 0 auto; /* Center horizontally */

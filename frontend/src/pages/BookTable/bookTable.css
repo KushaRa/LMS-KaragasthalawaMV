@@ -65,3 +65,126 @@ th {
   text-align: left;
   align-items: left;
 }
+/* Modal overlay styles */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #fff;
+  border-radius: 10px;
+  padding: 30px;
+  width: 50%;
+  max-width: 600px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.1s ease-in-out;
+}
+
+/* Add animation for modal */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Header styles */
+.modal-content h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Form layout */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.row1 {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.row1 label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #555;
+  flex: 1;
+}
+
+.row1 input {
+  flex: 2;
+  padding: 8px 10px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  outline: none;
+}
+
+.row1 input:focus {
+  border-color: #ff914d; /* Focus border color matches button */
+  box-shadow: 0 0 5px rgba(255, 145, 77, 0.5);
+}
+
+/* Button styles */
+button {
+  padding: 10px 15px;
+  font-size: 14px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+  transition: background 0.1s ease, transform 0.1s ease;
+}
+
+/* Button color scheme */
+button[type="button"] {
+  background-color: #ff914d; /* Primary orange color */
+  color: #fff;
+}
+
+button[type="button"]:nth-child(2) {
+  background-color: #dc3545; /* Red for delete */
+  color: #fff;
+}
+
+button[type="button"]:last-child {
+  background-color: #6c757d; /* Gray for cancel */
+  color: #fff;
+}
+
+button:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .modal-content {
+    width: 90%; /* Adjust width for smaller screens */
+  }
+
+  .row1 {
+    flex-direction: column; /* Stack labels and inputs vertically */
+    gap: 10px;
+  }
+}
+
