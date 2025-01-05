@@ -1,0 +1,16 @@
+@import './ModalBase.css';
+
+/* Add Member button */
+button.add-member-btn {
+  margin: 20px 0;
+  padding: 10px 20px;
+  background-color: #ff914d;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button.add-member-btn:hover {
+  background-color: #e47a2e;
+}

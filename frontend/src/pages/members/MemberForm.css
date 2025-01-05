@@ -5,7 +5,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); 
+    background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -30,8 +30,16 @@
     right: 15px;
     font-size: 20px;
     border: none;
-    background: none;
+    background: #f44336;
+    color: white;
+    border-radius: 5px;
+    padding: 5px 10px;
     cursor: pointer;
+  }
+  
+  .close-modal-btn:hover {
+    background: #d32f2f;
+    opacity: 0.9;
   }
   
   /* Section titles */
@@ -79,19 +87,20 @@
     background: #f9f9f9;
   }
   
-  /* Add Member button */
-  button.add-member-btn {
-    margin: 20px 0;
+  /* Save button */
+  button.save-btn {
+    margin-top: 20px;
     padding: 10px 20px;
-    background-color: #ff914d;
+    background-color: #4caf50;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
+    align-self: flex-end;
   }
   
-  button.add-member-btn:hover {
-    background-color: #e47a2e;
+  button.save-btn:hover {
+    background-color: #45a049;
   }
   

@@ -2,19 +2,22 @@ import React, { useState, useEffect } from 'react';
 import './Members.css'; // Link to the CSS file
 import NavBar from '../../components/Navbar/navBar';
 import axios from 'axios';
-import AddMemberForm from './addMemberForm/AddMemberForm'; // Import the AddMemberForm component
+import AddMemberForm from './AddMemberForm'; // Import the AddMemberForm component
+import EditMemberForm from './EditMemberForm';
 
 const Members = () => {
   const [members, setMembers] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [showAddMemberForm, setShowAddMemberForm] = useState(false);
+  const [selectedMember, setSelectedMember] = useState(null);
+  const [editingMember, setEditingMember] = useState(false);
 
-  // Fetch members from the backend
+  // Get members from the backend
   const fetchMembers = async () => {
     try {
       const response = await axios.get("http://localhost:5000/api/members");
-      console.log("Fetched Members:", response.data);
-      setMembers(response.data); // Set fetched members to state
+      console.log('Members fetched:', response.data)
+      setMembers(response.data);
     } catch (error) {
       console.error('Error fetching members:', error);
     }
@@ -26,9 +29,39 @@ const Members = () => {
   }, []);
 
   // Handle adding a new member
-  const handleMemberAdded = (newMember) => {
-    setMembers((prevMembers) => [...prevMembers, newMember]); // Update state with the new member
+  const handleMemberAdded = () => {
     fetchMembers(); // Re-fetch members to ensure the state matches the backend
+  };
+
+  // Handle save member after editing
+  const handleSaveMember = async (updatedMember) => {
+    try {
+      await axios.put(`http://localhost:5000/api/members/${updatedMember._id}`, updatedMember);
+      console.log('Member updated, re-fetching members...');
+      fetchMembers(); // Re-fetch members to reflect the updated member
+      setEditingMember(false);
+      setSelectedMember(null);
+    } catch (error) {
+      console.error('Error updating member:', error);
+    }
+  };
+
+  // Handle delete member
+  const handleDeleteMember = async (memberId) => {
+    try {
+      await axios.delete(`http://localhost:5000/api/members/${memberId}`);
+      console.log('Member deleted, re-fetching members...');
+      fetchMembers(); // Re-fetch members to ensure the state matches the backend
+      setSelectedMember(null);
+    } catch (error) {
+      console.error('Error deleting member:', error);
+    }
+  };
+
+  // Handle edit action
+  const handleEditMember = (member) => {
+    setSelectedMember(member);
+    setEditingMember(true);
   };
 
   const filteredMembers = members.filter((member) =>
@@ -39,30 +72,26 @@ const Members = () => {
     <div>
       <NavBar />
       <div className="members-container">
-        {/* Sidebar Section */}
         <div className="sidebar">
           <button
             className="add-member-btn"
-            onClick={() => setShowAddMemberForm(true)} // Show the add member form
+            onClick={() => setShowAddMemberForm(true)}
           >
             Add Member
           </button>
           <div className="total-members">Total Members: {members.length}</div>
         </div>
 
-        {/* Table Section */}
         <div className="table-section">
-          {/* Search Bar Above Table */}
           <div className="search-bar">
             <input
               type="text"
               placeholder="Search for the member"
               value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)} // Update search term
+              onChange={(e) => setSearchTerm(e.target.value)}
             />
           </div>
 
-          {/* Table */}
           <table>
             <thead>
               <tr>
@@ -73,20 +102,23 @@ const Members = () => {
                 <th>Index Number</th>
                 <th>Phone Number</th>
                 <th>Address</th>
+                <th>Actions</th>
               </tr>
             </thead>
             <tbody>
               {filteredMembers.map((member, index) => (
                 <tr key={index}>
-
-                  <td>{member.recordNumber || index + 1}</td> 
+                  <td>{index + 1}</td>
                   <td>{member.name}</td>
                   <td>{member.cardNumber}</td>
                   <td>{member.grade}</td>
                   <td>{member.indexNumber}</td>
                   <td>{member.phoneNumber}</td>
                   <td>{member.address}</td>
-
+                  <td>
+                    <button onClick={() => handleEditMember(member)}>Edit</button>
+                    <button onClick={() => handleDeleteMember(member._id)}>Delete</button>
+                  </td>
                 </tr>
               ))}
             </tbody>
@@ -94,11 +126,18 @@ const Members = () => {
         </div>
       </div>
 
-      {/* Conditionally render AddMemberForm */}
       {showAddMemberForm && (
         <AddMemberForm
-          onClose={() => setShowAddMemberForm(false)} // Close the form
-          onMemberAdded={handleMemberAdded} // Pass function to handle new member
+          onClose={() => setShowAddMemberForm(false)}
+          onMemberAdded={handleMemberAdded}
+        />
+      )}
+
+      {editingMember && selectedMember && (
+        <EditMemberForm
+          member={selectedMember}
+          onSave={handleSaveMember}
+          onClose={() => setEditingMember(false)}
         />
       )}
     </div>

@@ -1,0 +1,15 @@
+@import './ModalBase.css';
+
+/* Save button for Edit Form */
+.save-btn {
+  background: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.save-btn:hover {
+  background: #45a049;
+}
