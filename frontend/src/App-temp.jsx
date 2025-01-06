@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import IssueBook from './pages/issueBook/issueBook';
 import Members from "./pages/members/Members";
 import Hero from "./pages/Hero/hero";
+import ReturnBookTable from "./pages/ReturnBook/ReturnBook";
 
 
 const App = () => {
@@ -17,7 +18,9 @@ const App = () => {
         <Route path="/" element={<Hero />} />
         <Route path="issuebook" element={<IssueBook />} />
         <Route path="members" element={<Members />} />
-      </Routes>
+        <Route path="/return-book" element={<ReturnBookTable />} />
+        </Routes>
+        
     </Router>
    
   );

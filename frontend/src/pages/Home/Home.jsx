@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, } from "react";
 import NavBar from "../../components/Navbar/navBar";
+import { navigate } from "@reach/router";
 //import SearchIcon from "@mui/icons-material/Search";
 import AddBook from "../AddBook/addBook";
 import BookTable from "../BookTable/bookTable";
+
 import "./Home.css";
 
 const Home = () => {
@@ -10,11 +12,14 @@ const Home = () => {
 
   const handleOpen = () => {
     setFormOpen(true);
-    
   };
 
   const handleClose = () => {
     setFormOpen(false);
+  };
+
+  const handleReturnBook = () => {
+    navigate("/return-book");
   };
 
   return (
@@ -22,17 +27,21 @@ const Home = () => {
       <NavBar />
       <div className="home">
         <div className="container1">
-        <div className="buttonSection">
-          <span>Add/Issue/Return Books</span>
-          <div className="addBookContainer">
-                <button className="AddBook" onClick={handleOpen}>Add Book</button>
-          </div>          
-          
-          <button className="IssueBook">Issue Book</button>
-          <button className="ReturnBook">Return Book</button>
-        </div>
-        
-               {/* Popup Form */}
+          <div className="buttonSection">
+            <span>Add/Issue/Return Books</span>
+            <div className="addBookContainer">
+              <button className="AddBook" onClick={handleOpen}>
+                Add Book
+              </button>
+            </div>
+
+            <button className="IssueBook">Issue Book</button>
+            <button className="ReturnBook" onClick={handleReturnBook}>
+              Return Book
+            </button>
+          </div>
+
+          {/* Popup Form */}
           {formOpen && (
             <div className="popupBackdrop">
               <div className="popupContent">
@@ -43,11 +52,10 @@ const Home = () => {
               </div>
             </div>
           )}
-        
         </div>
 
-        <div className="summaryTable" style={{backgroundColor:"white"}}>
-        <div className="search-bar" style={{margin:'20px'}}>
+        <div className="summaryTable" style={{ backgroundColor: "white" }}>
+          <div className="search-bar" style={{ margin: "20px" }}>
             <input
               type="text"
               placeholder="Search for the book"
@@ -56,14 +64,13 @@ const Home = () => {
             />
           </div>
 
-          <div className="bkTab" style={{margin:'20px'}}>
+          <div className="bkTab" style={{ margin: "20px" }}>
             <BookTable />
           </div>
         </div>
-      </div> 
+      </div>
     </div>
   );
 };
 
 export default Home;
-
