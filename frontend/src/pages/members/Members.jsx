@@ -1,18 +1,21 @@
+//handles displaying, adding, editing, and deleting members.
+
 import React, { useState, useEffect } from 'react';
 import './Members.css'; // Link to the CSS file
 import NavBar from '../../components/Navbar/navBar';
-import axios from 'axios';
+import axios from 'axios'; //To make HTTP requests to the backend
 import AddMemberForm from './AddMemberForm'; // Import the AddMemberForm component
-import EditMemberForm from './EditMemberForm';
+import EditMemberForm from './EditMemberForm'; //Tracks whether the user is currently editing a member.
+
 
 const Members = () => {
-  const [members, setMembers] = useState([]);
-  const [searchTerm, setSearchTerm] = useState('');
-  const [showAddMemberForm, setShowAddMemberForm] = useState(false);
-  const [selectedMember, setSelectedMember] = useState(null);
-  const [editingMember, setEditingMember] = useState(false);
+  const [members, setMembers] = useState([]); //Stores the list of all members fetched from the backend.
+  const [searchTerm, setSearchTerm] = useState(''); //Tracks the text input in the search bar.
+  const [showAddMemberForm, setShowAddMemberForm] = useState(false); //Toggles the visibility of the Add Member form.
+  const [selectedMember, setSelectedMember] = useState(null); //Stores the member data when the user clicks "Edit".
+  const [editingMember, setEditingMember] = useState(false); //Tracks whether the user is currently editing a member.
 
-  // Get members from the backend
+  // Get members from the backend Tracks whether the user is currently editing a member.
   const fetchMembers = async () => {
     try {
       const response = await axios.get("http://localhost:5000/api/members");
@@ -22,18 +25,22 @@ const Members = () => {
       console.error('Error fetching members:', error);
     }
   };
-
-  // Fetch members on component mount
+  // Fetch members automatically on load.
   useEffect(() => {
     fetchMembers();
   }, []);
 
-  // Handle adding a new member
+  // Handle adding a new member After a new member is added using the AddMemberForm
+  //this function re-fetches the updated list from the server.
   const handleMemberAdded = () => {
     fetchMembers(); // Re-fetch members to ensure the state matches the backend
   };
 
+
+
   // Handle save member after editing
+  //When editing is done, this function sends the updated member to the server
+  //After saving, it re-fetches the updated member list
   const handleSaveMember = async (updatedMember) => {
     try {
       await axios.put(`http://localhost:5000/api/members/${updatedMember._id}`, updatedMember);
@@ -45,6 +52,8 @@ const Members = () => {
       console.error('Error updating member:', error);
     }
   };
+
+
 
   // Handle delete member
   const handleDeleteMember = async (memberId) => {
@@ -58,21 +67,25 @@ const Members = () => {
     }
   };
 
+
   // Handle edit action
   const handleEditMember = (member) => {
     setSelectedMember(member);
     setEditingMember(true);
   };
 
+//Filters the members based on the search
   const filteredMembers = members.filter((member) =>
     member.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
+
+
 
   return (
     <div>
       <NavBar />
       <div className="members-container">
-        <div className="sidebar">
+        <div className="sidebar"> 
           <button
             className="add-member-btn"
             onClick={() => setShowAddMemberForm(true)}
@@ -81,6 +94,7 @@ const Members = () => {
           </button>
           <div className="total-members">Total Members: {members.length}</div>
         </div>
+
 
         <div className="table-section">
           <div className="search-bar">
@@ -91,6 +105,7 @@ const Members = () => {
               onChange={(e) => setSearchTerm(e.target.value)}
             />
           </div>
+
 
           <table>
             <thead>
