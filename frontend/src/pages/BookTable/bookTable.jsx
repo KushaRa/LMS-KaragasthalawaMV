@@ -1,4 +1,5 @@
 import React ,{useState, useEffect} from 'react';
+import { useNavigate } from "react-router-dom";
 import './bookTable.css'
 import axios from 'axios';
 //import { useParams } from "react-router-dom";
@@ -11,6 +12,8 @@ const BookTable = () => {
   const [error, setError] = useState('');
   const [selectedBook, setSelectedBook] = useState(null);
   const [updateBook, setUpdateBook] = useState(null);
+  const navigate = useNavigate();
+  //const [deleteBook, setDelete]=useState(null);
 
   //const [modal, modalDetails] = useState(null);
 const handleInputChange = (e) =>{
@@ -22,7 +25,7 @@ const handleInputChange = (e) =>{
 
 const handleUpdateBook = async () => {
   try {
-    const response = await axios.put(
+    await axios.put(
       `http://localhost:5000/api/update-book/${selectedBook._id}`, // Ensure you're using _id here
       updateBook
     );
@@ -39,6 +42,17 @@ const handleUpdateBook = async () => {
   }
 };
 
+//delete book
+const handleDeleteBook =async ()=>{
+  try{
+    await axios.delete(`http://localhost:5000/api/delete-book/${selectedBook._id}`);
+    alert('Book deleted successfully');
+  }catch (error) {
+    alert('Error Deleting the book');
+    console.error("Deleting error:", error);
+    navigate('/'); 
+  }
+}
 
   const handleRowClick =(item)=>{
     console.log("Selected Item ID:", item._id); 
@@ -212,7 +226,7 @@ if (error) return <div>Error: {error}</div>;
            
               {/* Add other fields as necessary */}
               <button type="button" onClick={handleUpdateBook}>Save</button>
-              <button type="button" >Delete</button>
+              <button type="button" onClick={handleDeleteBook} >Delete</button>
               <button type="button" onClick={() => setSelectedBook(null)}>Cancel</button>
             </form>
           </div>
