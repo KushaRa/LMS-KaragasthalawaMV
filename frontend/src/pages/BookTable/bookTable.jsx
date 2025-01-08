@@ -47,6 +47,7 @@ const handleDeleteBook =async ()=>{
   try{
     await axios.delete(`http://localhost:5000/api/delete-book/${selectedBook._id}`);
     alert('Book deleted successfully');
+    window.location.reload(); //  refresh the entire page
   }catch (error) {
     alert('Error Deleting the book');
     console.error("Deleting error:", error);
