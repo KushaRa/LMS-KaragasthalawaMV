@@ -1,10 +1,6 @@
 import React ,{useState, useEffect} from 'react';
 import './bookTable.css'
 import axios from 'axios';
-//import { useParams } from "react-router-dom";
-//import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-//import BookCard from '../EditDelete Book/editBook';
-
 
 const BookTable = () => {
   const [data,setData]=useState([]);
@@ -12,13 +8,29 @@ const BookTable = () => {
   const [selectedBook, setSelectedBook] = useState(null);
   const [updateBook, setUpdateBook] = useState(null);
 
-  //const [modal, modalDetails] = useState(null);
+
+useEffect (()=>{
+    const fetchData = async() =>{
+  
+    try{
+      const response =await axios.get('http://localhost:5000/api/display-book');
+      setData(response.data);
+      
+    }catch(error){
+      setError(error.message);
+    }
+   };
+   fetchData();
+  },[]);
+
+
 const handleInputChange = (e) =>{
   const{name, value} =e.target
   setUpdateBook({
     ...updateBook, [name]:value,
   });
 }
+
 
 const handleUpdateBook = async () => {
   try {
@@ -46,24 +58,8 @@ const handleUpdateBook = async () => {
     setUpdateBook({...item});
   }
 
- useEffect (()=>{
-  const fetchData = async() =>{
-
-  try{
-    const response =await axios.get('http://localhost:5000/api/display-book');
-    setData(response.data);
-    
-  }catch(error){
-    setError(error.message);
-  }
- };
- fetchData();
-},[]);
-
-
-
-
-//if (loading) return <div>Loading...</div>;
+  
+if (loading) return <div>Loading...</div>;
 if (error) return <div>Error: {error}</div>;
 
 
