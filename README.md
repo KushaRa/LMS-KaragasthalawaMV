@@ -1,5 +1,3 @@
-# README
-
 ## Library Managment System for Karagasthalawa School in Belihuloya
 Real World Library Management System for Karagasthalawa School in Belihuloya to manage 200+ students and 3000+ books
 ## Features
