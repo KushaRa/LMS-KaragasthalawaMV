@@ -12,8 +12,7 @@
 
 }
 
-.row {
-  display: flex;
+.row {  display: flex;
   /* justify-content: space-between; */
   gap: 50px;
   margin-bottom: 50px;
@@ -24,8 +23,8 @@
   color: #333;
   margin-bottom: 20px;
   font-family: 'Arial', sans-serif;
-  margin-left: 50px;
-  margin-top: 40px;
+   margin-left: 50px;
+  margin-top: 40px; 
 }
 
 /* Form Sections */
