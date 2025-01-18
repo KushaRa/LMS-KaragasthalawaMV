@@ -3,9 +3,11 @@ import { useNavigate } from "react-router-dom";
 import './bookTable.css'
 import axios from 'axios';
 
+
 //import { useParams } from "react-router-dom";
 //import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 //import BookCard from '../EditDelete Book/editBook';
+
 
 
 const BookTable = () => {
@@ -16,13 +18,29 @@ const BookTable = () => {
   const navigate = useNavigate();
   //const [deleteBook, setDelete]=useState(null);
 
-  //const [modal, modalDetails] = useState(null);
+
+useEffect (()=>{
+    const fetchData = async() =>{
+  
+    try{
+      const response =await axios.get('http://localhost:5000/api/display-book');
+      setData(response.data);
+      
+    }catch(error){
+      setError(error.message);
+    }
+   };
+   fetchData();
+  },[]);
+
+
 const handleInputChange = (e) =>{
   const{name, value} =e.target
   setUpdateBook({
     ...updateBook, [name]:value,
   });
 }
+
 
 const handleUpdateBook = async () => {
   try {
@@ -62,24 +80,8 @@ const handleDeleteBook =async ()=>{
     setUpdateBook({...item});
   }
 
- useEffect (()=>{
-  const fetchData = async() =>{
-
-  try{
-    const response =await axios.get('http://localhost:5000/api/display-book');
-    setData(response.data);
-    
-  }catch(error){
-    setError(error.message);
-  }
- };
- fetchData();
-},[]);
-
-
-
-
-//if (loading) return <div>Loading...</div>;
+  
+if (loading) return <div>Loading...</div>;
 if (error) return <div>Error: {error}</div>;
 
 
