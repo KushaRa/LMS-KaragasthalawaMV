@@ -4,10 +4,7 @@
   flex-direction: column;
 }
 
-.home {
-  display: flex;
-  margin-top: 20px;
-}
+
 
 .container1 {
   display: flex;

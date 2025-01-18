@@ -37,6 +37,7 @@ const submitForm = async (e) => {
     if (response.status === 200) {
       console.log("Book Submitted Successfully");
       alert("Book Submitted Successfully");
+      window.location.reload(); //  refresh the entire page
     } 
     setBook(books);
   } catch (err) {
