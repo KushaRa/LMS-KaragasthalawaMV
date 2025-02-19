@@ -7,6 +7,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import IssueBook from './pages/issueBook/issueBook';
 import Members from "./pages/members/Members";
 import Hero from "./pages/Hero/hero";
+import ReturnBook from "./pages/RetrurnBook/returnbook";
+import Dashboard from "./pages/DashBoard/dashboard";
 
 
 const App = () => {
@@ -17,6 +19,8 @@ const App = () => {
         <Route path="/" element={<Hero />} />
         <Route path="issuebook" element={<IssueBook />} />
         <Route path="members" element={<Members />} />
+        <Route path="returnbook" element={<ReturnBook />} />
+        <Route path="dashboard" element={<Dashboard />} />
       </Routes>
     </Router>
    
