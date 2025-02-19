@@ -4,7 +4,11 @@
   flex-direction: column;
 }
 
-
+.home{
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+}
 
 .container1 {
   display: flex;

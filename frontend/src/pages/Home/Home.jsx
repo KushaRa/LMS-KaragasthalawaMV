@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useState} from "react";
 import NavBar from "../../components/Navbar/navBar";
 //import SearchIcon from "@mui/icons-material/Search";
 import AddBook from "../AddBook/addBook";
 import BookTable from "../BookTable/bookTable";
 import "./Home.css";
+import { useNavigate } from "react-router-dom";
+// import issueBook from "../issueBook/issueBook";
 
 const Home = () => {
   const [formOpen, setFormOpen] = useState(false);
@@ -17,6 +19,12 @@ const Home = () => {
     setFormOpen(false);
   };
 
+  const navigate = useNavigate();
+
+  const handleIssueBook = () => {
+    navigate("/issuebook"); // Redirects to the IssueBook route
+  };
+
   return (
     <div className="homesec">
       <NavBar />
@@ -28,7 +36,7 @@ const Home = () => {
                 <button className="AddBook" onClick={handleOpen}>Add Book</button>
           </div>          
           
-          <button className="IssueBook">Issue Book</button>
+          <button className="IssueBook" onClick={handleIssueBook}>Issue Book</button>
           <button className="ReturnBook">Return Book</button>
         </div>
         
