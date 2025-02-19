@@ -12,11 +12,9 @@ const NavBar = () => {
         <div className='logoN'>LMS</div>
             <ul>            
             <li></li>  
-                <li><Link to="/home">Dashboard</Link></li>
-                <li><Link to="/dashboard"></Link>Books</li>
+                <li><Link to="/dashboard">Dashboard</Link></li>
                 <li><Link to="/members">Members</Link></li>
                 <li>About Us</li>
-                {/* <li><button>Logout</button></li> */}
                 <li><button><UserButton /></button></li>
 
 

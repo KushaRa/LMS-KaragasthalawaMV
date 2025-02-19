@@ -6,7 +6,7 @@ const Dashboard = () => {
 
   useEffect(() => {
     // Make a GET request to the API to fetch book counts
-    axios.get('http://localhost:5000/api/count-book')
+    axios.get('http://localhost:5000/api/books/count')
       .then(response => {
         setBookCounts(response.data); // Set the book counts in state
       })
