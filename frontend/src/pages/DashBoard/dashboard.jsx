@@ -16,20 +16,20 @@ const Dashboard = () => {
   }, []);
 
   return (
-    <div>
-      <h2>Book Counts</h2>
-      <table>
+    <div style={{ padding: '20px', fontFamily: 'Arial, sans-serif' }}>
+      <h2 style={{ textAlign: 'center', color: '#333', fontSize:'40px' }}>Book Counts</h2>
+      <table style={{ width: '100%', borderCollapse: 'collapse', marginRight: '40px' }}>
         <thead>
-          <tr>
-            <th>Book Name</th>
-            <th>Count</th>
+          <tr style={{ backgroundColor: '#f4f4f4', textAlign: 'left' }}>
+            <th style={{ padding: '10px', borderBottom: '2px solid #ddd',fontSize: '20px'}}>Book Name</th>
+            <th style={{ padding: '5px', borderBottom: '2px solid #ddd', fontSize: '20px' }}>Count</th>
           </tr>
         </thead>
         <tbody>
           {bookCounts.map((book, index) => (
-            <tr key={index}>
-              <td>{book.bookName}</td>
-              <td>{book.count}</td>
+            <tr key={index} style={{ borderBottom: '1px solid #ddd' }}>
+              <td style={{ padding: '10px', fontSize:'15px' }}>{book.bookName}</td>
+              <td style={{ padding: '10px', fontSize:'15px' }}>{book.count}</td>
             </tr>
           ))}
         </tbody>

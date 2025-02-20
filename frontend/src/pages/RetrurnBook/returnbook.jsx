@@ -33,36 +33,42 @@ const ReturnBook = () => {
   };
 
   return (
-    <div className="bookDisplay">
+    <div style={{ fontFamily: "Arial, sans-serif" }}>
       <NavBar />
-      <h2>Return Issued Books</h2>
-      <table>
+      <h2 style={{ textAlign: "center", color: "#333", fontSize: '30px', padding:'20px' }}>Return Issued Books</h2>
+      <table style={{ width: "100%", borderCollapse: "collapse", marginTop: "20px" }}>
         <thead>
-          <tr>
-            <th>Book ID</th>
-            <th>Book Name</th>
-            <th>Member ID</th>
-            <th>Member Name</th>
-            <th>Start Issue Date</th>
-            <th>End Issue Date</th>
-            <th>Action</th> {/* Add Action column */}
+          <tr style={{ backgroundColor: "#f4f4f4", textAlign: "left" , fontSize: '15px'}}>
+            <th style={{ padding: "10px", borderBottom: "2px solid #ddd" }}>Book ID</th>
+            <th style={{ padding: "10px", borderBottom: "2px solid #ddd" }}>Book Name</th>
+            <th style={{ padding: "10px", borderBottom: "2px solid #ddd" }}>Member ID</th>
+            <th style={{ padding: "10px", borderBottom: "2px solid #ddd" }}>Member Name</th>
+            <th style={{ padding: "10px", borderBottom: "2px solid #ddd" }}>Start Issue Date</th>
+            <th style={{ padding: "10px", borderBottom: "2px solid #ddd" }}>End Issue Date</th>
+            <th style={{ padding: "10px", borderBottom: "2px solid #ddd" }}>Action</th>
           </tr>
         </thead>
         <tbody>
           {data.length > 0 ? (
             data.map((item) => (
-              <tr key={item._id}>
-                <td>{item.bookID}</td>
-                <td>{item.bookName}</td>
-                <td>{item.memberID}</td>
-                <td>{item.memberName}</td>
-                <td>{new Date(item.issueDate).toLocaleDateString()}</td>
-                <td>{new Date(item.returnDate).toLocaleDateString()}</td>
+              <tr key={item._id} style={{ borderBottom: "1px solid #ddd", fontSize: '13px' }}>
+                <td style={{ padding: "10px" }}>{item.bookID}</td>
+                <td style={{ padding: "10px" }}>{item.bookName}</td>
+                <td style={{ padding: "10px" }}>{item.memberID}</td>
+                <td style={{ padding: "10px" }}>{item.memberName}</td>
+                <td style={{ padding: "10px" }}>{new Date(item.issueDate).toLocaleDateString()}</td>
+                <td style={{ padding: "10px" }}>{new Date(item.returnDate).toLocaleDateString()}</td>
                 <td>
                   <button
-                    className="returnbutton"
-                    style={{ backgroundColor: "green" }}
-                    onClick={() => handleReturnClick(item._id)} // Call the function with the book's ID
+                    style={{
+                      backgroundColor: "green",
+                      color: "white",
+                      padding: "8px 12px",
+                      border: "none",
+                      borderRadius: "5px",
+                      cursor: "pointer",
+                    }}
+                    onClick={() => handleReturnClick(item._id)}
                   >
                     Return
                   </button>
@@ -71,7 +77,7 @@ const ReturnBook = () => {
             ))
           ) : (
             <tr>
-              <td colSpan="7">No issued books available</td>
+              <td colSpan="7" style={{ textAlign: "center", padding: "10px" }}>No issued books available</td>
             </tr>
           )}
         </tbody>
