@@ -40,6 +40,7 @@ const submitForm = async (e) => {
       window.location.reload(); //  refresh the entire page
     } 
     setBook(books);
+   
   } catch (err) {
     console.error("Error submitting the book:", err);
     alert("Book is not Submitted. Please try again.");
