@@ -157,7 +157,7 @@ placeholder="Enter book ID" onChange={inputHandlers} />
          {/* Row 1 */}
          <div className="row1">
           <div className="labelCol">
-            <label htmlFor="other">Other Details :</label>
+            <label htmlFor="other">Reason For Remove :</label>
             <input type="text" id="other" name="other" value={intBook.other}  placeholder="Enter book ID" onChange={inputHandlers} />
           </div>
 

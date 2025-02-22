@@ -51,7 +51,7 @@ if (error) return <div>Error: {error}</div>;
             <th>Price</th>
             <th>Don. Medium</th>
             <th>Remove Date</th>
-            <th>Other</th>
+            <th>Reason For Remove</th>
             <th>Status</th>
         </tr>
         <tbody>
