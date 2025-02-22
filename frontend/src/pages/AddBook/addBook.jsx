@@ -64,7 +64,7 @@ const submitForm = async (e) => {
         <div className="labelCol">
             <label htmlFor="bookID">Book ID:</label>
             <input type="text" id="bookID" name="bookID" value={intBook.bookID}
-placeholder="Enter book ID" onChange={inputHandlers} />
+            placeholder="Enter book ID" onChange={inputHandlers} />
           </div>
 
           <div className="labelCol">

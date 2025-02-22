@@ -3,11 +3,12 @@ import { useNavigate } from "react-router-dom";
 import "./bookTable.css";
 import axios from "axios";
 
-const BookTable = () => {
+const BookTable = ({ searchTerm }) => {
   const [data, setData] = useState([]);
   const [error, setError] = useState("");
   const [selectedBook, setSelectedBook] = useState(null);
   const [updateBook, setUpdateBook] = useState(null);
+  //const [searchName, setSearchName] = useState(null);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -64,6 +65,11 @@ const BookTable = () => {
     setUpdateBook({ ...item });
   };
 
+  const filteredData = data.filter((book) =>
+    [book.bookName, book.author, book.category, book.publisher]
+      .some(field => field.toLowerCase().includes(searchTerm.toLowerCase()))
+  );
+
   if (error) return <div>Error: {error}</div>;
 
   return (
@@ -88,7 +94,7 @@ const BookTable = () => {
           </tr>
         </thead>
         <tbody>
-          {data.map((item) => (
+          {filteredData.map((item) => (
             <tr key={item._id} onClick={() => handleRowClick(item)}>
               <td>{item.bookID}</td>
               <td>{item.bookName}</td>
