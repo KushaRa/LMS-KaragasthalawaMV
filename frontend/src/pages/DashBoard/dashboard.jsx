@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import NavBar from '../../components/Navbar/navBar';
+
 
 const Dashboard = () => {
   const [bookCounts, setBookCounts] = useState([]);
@@ -16,11 +18,13 @@ const Dashboard = () => {
   }, []);
 
   return (
-    <div style={{ padding: '20px', fontFamily: 'Arial, sans-serif' }}>
-      <h2 style={{ textAlign: 'center', color: '#333', fontSize:'40px' }}>Book Counts</h2>
-      <table style={{ width: '100%', borderCollapse: 'collapse', marginRight: '40px' }}>
+    <><NavBar/>
+    <div style={{margin:'20px',padding: 0, backgroundColor: 'white', height: '100% '}}>
+      
+      <h2 style={{ textAlign: 'left', color: '#333', fontSize:'40px' ,margin:'20px'}}>Book Count</h2>
+      <table style={{ width: '95%', borderCollapse: 'collapse', margin: '20px' }}>
         <thead>
-          <tr style={{ backgroundColor: '', textAlign: 'left' }}>
+          <tr style={{ backgroundColor: '#gray', textAlign: 'left' }}>
             <th style={{ padding: '10px', borderBottom: '2px solid #ddd',fontSize: '20px'}}>Book Name</th>
             <th style={{ padding: '5px', borderBottom: '2px solid #ddd', fontSize: '20px' }}>Count</th>
           </tr>

@@ -89,8 +89,8 @@ const BookTable = ({ searchTerm }) => {
             <th>Price</th>
             <th>Don. Medium</th>
             <th>Remove Date</th>
-            <th>Other</th>
-            <th>Status</th>
+            <th>Reason to Remove</th>
+            
           </tr>
         </thead>
         <tbody>
@@ -109,7 +109,7 @@ const BookTable = ({ searchTerm }) => {
               <td>{item.donationMedium}</td>
               <td>{item.removeDate}</td>
               <td>{item.other}</td>
-              <td>{item.status}</td>
+            
             </tr>
           ))}
         </tbody>
@@ -153,17 +153,10 @@ const BookTable = ({ searchTerm }) => {
               <div className="row1">
                 <label>Removed Date:</label>
                 <input type="date" name="removeDate" value={updateBook.removeDate} onChange={handleInputChange} />
-                <label>Other Details:</label>
+                <label>Reason To Remove:</label>
                 <input type="text" name="other" value={updateBook.other} onChange={handleInputChange} />
               </div>
-              <div className="row1">
-                <label>Status:</label>
-                <select name="status" value={updateBook.status} onChange={handleInputChange}>
-                  <option value="Available">Available</option>
-                  <option value="Checked Out">Checked Out</option>
-                  <option value="Lost">Lost</option>
-                </select>
-              </div>
+              
 
               <button type="button" onClick={handleUpdateBook}>
                 Save

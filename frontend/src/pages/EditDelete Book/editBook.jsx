@@ -52,7 +52,7 @@ if (error) return <div>Error: {error}</div>;
             <th>Don. Medium</th>
             <th>Remove Date</th>
             <th>Reason For Remove</th>
-            <th>Status</th>
+            
         </tr>
         <tbody>
       {data.map((item, index) => (
@@ -70,7 +70,7 @@ if (error) return <div>Error: {error}</div>;
           <td>{item.donationMedium}</td>
           <td>{item.removeDate}</td>
           <td>{item.other}</td>       
-          <td>{item.status}</td>
+          
         </tr>
       ))}
 </tbody>

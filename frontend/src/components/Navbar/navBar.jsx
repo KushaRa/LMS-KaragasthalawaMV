@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './navBar.css';
+import lmslogo from "../../assets/LMS.png";
 
 import {  UserButton } from '@clerk/clerk-react'
 
@@ -11,14 +12,11 @@ const NavBar = () => {
         <nav className='ord1'>
         <div className='logoN'>LMS</div>
             <ul>            
-            <li></li>  
-                <li><Link to="/">Home</Link></li>
-                <li><Link to="/dashboard">Dashboard</Link></li>
-                <li><Link to="/members">Members</Link></li>
-                <li>About Us</li>
+                <li style={{marginTop:"15px"}}><Link to="/">Home</Link></li>
+                <li style={{marginTop:"15px"}}><Link to="/dashboard">Dashboard</Link></li>
+                <li style={{marginTop:"15px"}}><Link to="/members">Members</Link></li>
+                <li style={{marginTop:"15px"}}><Link to="/members">About Us</Link></li>
                 <li><button><UserButton /></button></li>
-
-
             </ul>
         </nav>
       
