@@ -40,7 +40,6 @@ const submitForm = async (e) => {
       window.location.reload(); //  refresh the entire page
     } 
     setBook(books);
-   
   } catch (err) {
     console.error("Error submitting the book:", err);
     alert("Book is not Submitted. Please try again.");
@@ -65,7 +64,7 @@ const submitForm = async (e) => {
         <div className="labelCol">
             <label htmlFor="bookID">Book ID:</label>
             <input type="text" id="bookID" name="bookID" value={intBook.bookID}
-            placeholder="Enter book ID" onChange={inputHandlers} />
+placeholder="Enter book ID" onChange={inputHandlers} />
           </div>
 
           <div className="labelCol">
@@ -138,7 +137,7 @@ const submitForm = async (e) => {
 
           <div className="labelCol">
             <label htmlFor="price">Price of the Book:</label>
-            <input type="number" id="price" name="price" value={intBook.price} placeholder="Enter book ID" onChange={inputHandlers}/>
+            <input type="number" id="price" name="price" value={intBook.price} placeholder="Price" onChange={inputHandlers}/>
           </div>
         </div>
 
@@ -158,7 +157,7 @@ const submitForm = async (e) => {
          {/* Row 1 */}
          <div className="row1">
           <div className="labelCol">
-            <label htmlFor="other">Reason For Remove :</label>
+            <label htmlFor="other">Other Details :</label>
             <input type="text" id="other" name="other" value={intBook.other}  placeholder="Enter book ID" onChange={inputHandlers} />
           </div>
 

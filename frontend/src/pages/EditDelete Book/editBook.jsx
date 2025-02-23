@@ -92,7 +92,7 @@ if (error) return <div>Error: {error}</div>;
                 <p><b>Total Pages:</b> {modal.totalPages}</p>
                 <p><b>Donation Medium:</b> {modal.donationMedium}</p>
                 <p><b>Remove Data:</b> {modal.removeDate}</p>
-                <p><b>Other:</b> {modal.other}</p>           
+                <p><b>Reason To Remove:</b> {modal.other}</p>           
                                
                 {/* Add more details as needed */}
                 

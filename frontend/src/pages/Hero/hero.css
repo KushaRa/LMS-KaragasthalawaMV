@@ -1,76 +1,110 @@
 .hero {
-    background-image: url("../../assets/lms.jpg"); /* Path to your background image */
-    background-size: cover; /* Ensures the image covers the entire area */
-    background-position: center; /* Centers the image */
-    background-repeat: no-repeat; /* Prevents the image from repeating */
-    width: 100%;
-    height: 100vh; /* Full viewport height */
-    display: flex;
-    justify-content: center; /* Center the content horizontally */
-    align-items: center; /* Center the content vertically */
-    position: relative; /* For stacking content */
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .hero::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.8); /* Darkens the background image */
-    z-index: -1; /* Ensures the overlay stays behind the content */
-  }
-  
-  .hero-content {
-    text-align: center;
-    padding: 20px;
-    z-index: 1; /* Ensures content stays above the background */
-  }
-  
-  .hero h1 {
-    font-size: 3.5rem;
-    margin-bottom: 10px;
-    font-family: 'Arial', sans-serif;
-    font-weight: bold;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: #fff; /* White color for the heading */
-    text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.6); /* Subtle shadow for text */
-  }
-  
-  .hero p {
-    font-size: 1.5rem;
-    margin-top: 10px;
-    font-family: 'Georgia', serif;
-    font-style: italic;
-    letter-spacing: 1px;
-    opacity: 0.9;
-    color: #ff8e31; /* White color for the paragraph */
-  }
+  background-image: url("../../assets/hero.jpeg"); /* Path to your background image */
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.5);
+  background-blend-mode: darken;
+}
 
-  .btn{
-    display: inline-block;
-    padding: 10px 20px;
-    margin-top: 20px;
-    background-color: #f77f00;
-    color: whitesmoke;
-    font-size: 1.2rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border-radius: 10px;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s;
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8); /* Darkens the background image */
+  z-index: -1; /* Ensures the overlay stays behind the content */
+}
+
+.hero-content {
+  text-align: center;
+  padding: 20px;
+  z-index: 1; /* Ensures content stays above the background */
+}
+
+/* Heading Animation */
+.hero h1 {
+  font-size: 3.5rem;
+  margin: 50px;
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #fff; /* White color for the heading */
+  text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.6); /* Subtle shadow for text */
+  opacity: 0;
+  transform: translateY(-30px);
+  animation: fadeInUp 1.2s ease-out forwards;
+}
+
+/* Paragraph Animation */
+.hero p {
+  font-size: 2.0rem;
+  margin-top: 10px;
+  font-family: 'Georgia', serif;
+  font-style: italic;
+  letter-spacing: 1px;
+  opacity: 0.9;
+  font-weight: bolder;
+  color: white; /* White color for the paragraph */
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1.5s ease-out forwards 0.5s;
+}
+
+/* Button Animation */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 20px;
+  background-color: #f77f00;
+  color: whitesmoke;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  opacity: 0;
+  transform: scale(0.8);
+  animation: fadeInScale 1s ease-out forwards 1s;
+}
+
+.btn:hover {
+  background-color: #e18a44;
+  transform: translateY(-2px) scale(1.05);
+  transition: 0.5s;
+}
+
+/* Keyframes for Animations */
+@keyframes fadeInUp {
+  from {
+      opacity: 0;
+      transform: translateY(30px);
   }
-  .btn:hover {
-    background-color: #e18a44;
-    transform: translateY(-2px);
-    transition: 0.5s;
+  to {
+      opacity: 1;
+      transform: translateY(0);
   }
-  
-  
-  
+}
+
+@keyframes fadeInScale {
+  from {
+      opacity: 0;
+      transform: scale(0.8);
+  }
+  to {
+      opacity: 1;
+      transform: scale(1);
+  }
+}
