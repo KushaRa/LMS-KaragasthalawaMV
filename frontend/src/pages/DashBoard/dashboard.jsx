@@ -20,7 +20,7 @@ const Dashboard = () => {
       <h2 style={{ textAlign: 'center', color: '#333', fontSize:'40px' }}>Book Counts</h2>
       <table style={{ width: '100%', borderCollapse: 'collapse', marginRight: '40px' }}>
         <thead>
-          <tr style={{ backgroundColor: '#f4f4f4', textAlign: 'left' }}>
+          <tr style={{ backgroundColor: '', textAlign: 'left' }}>
             <th style={{ padding: '10px', borderBottom: '2px solid #ddd',fontSize: '20px'}}>Book Name</th>
             <th style={{ padding: '5px', borderBottom: '2px solid #ddd', fontSize: '20px' }}>Count</th>
           </tr>
@@ -35,6 +35,7 @@ const Dashboard = () => {
         </tbody>
       </table>
     </div>
+    </>
   );
 };
 
