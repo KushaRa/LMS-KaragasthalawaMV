@@ -8,14 +8,14 @@ const BookTable = ({ searchTerm }) => {
   const [error, setError] = useState("");
   const [selectedBook, setSelectedBook] = useState(null);
   const [updateBook, setUpdateBook] = useState(null);
-  //const [searchName, setSearchName] = useState(null);
   const navigate = useNavigate();
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get("http://localhost:5000/api/display-book");
-        setData(response.data);
+        const sortedData = response.data.sort((a, b) => a.bookID - b.bookID);
+      setData(sortedData);
       } catch (error) {
         setError(error.message);
       }
@@ -73,8 +73,8 @@ const BookTable = ({ searchTerm }) => {
   if (error) return <div>Error: {error}</div>;
 
   return (
-    <div className="bookDisplay">
-      <table>
+    <div className="bookDisplay">      
+     <table>
         <thead>
           <tr>
             <th>ID</th>
@@ -108,7 +108,7 @@ const BookTable = ({ searchTerm }) => {
               <td>{item.price}</td>
               <td>{item.donationMedium}</td>
               <td>{item.removeDate}</td>
-              <td>{item.other}</td>
+              <td style={{color:"red"}}>{item.other}</td>
             
             </tr>
           ))}
