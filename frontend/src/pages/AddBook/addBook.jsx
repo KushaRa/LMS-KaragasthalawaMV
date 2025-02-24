@@ -64,7 +64,7 @@ const submitForm = async (e) => {
         <div className="labelCol">
             <label htmlFor="bookID">Book ID:</label>
             <input type="text" id="bookID" name="bookID" value={intBook.bookID}
-placeholder="Enter book ID" onChange={inputHandlers} />
+            placeholder="Enter book ID" onChange={inputHandlers} />
           </div>
 
           <div className="labelCol">
@@ -175,45 +175,3 @@ placeholder="Enter book ID" onChange={inputHandlers} />
 
 export default AddBook;
 
-{/*onst submitForm = async (e) => {
-  e.preventDefault();
-  try {
-    const response = await fetch('http://localhost:5000/api/submit-book', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(books),
-    });
-    if (response.ok) {
-      console.log('Data submitted successfully!');
-      alert('Data submitted successfully!');
-      const result = await response.json();
-      console.log('Success:', result);
-      alert('Post submitted successfully!');
-      setBook({
-        bookID:"",
-        bookName:"",
-        bookclassificationNum:"",
-        author:"",
-        entryDate:"",
-        category:"",
-        publisher:"",
-        publicationDate:"",
-        totalPages:"",
-        price:"",
-        donationMedium:"",
-        removeDate:"",
-        other:""
-      });
-      
-    } else {
-      console.error('Error:', response.statusText);
-      alert('Failed to submit the post.');
-    }
-  } catch (error) {
-    console.error('Error:', error);
-    // alert('Post Submitted.');
-  }
-  
-};*/}
