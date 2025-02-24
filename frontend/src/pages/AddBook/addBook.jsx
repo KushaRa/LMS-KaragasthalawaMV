@@ -137,7 +137,7 @@ placeholder="Enter book ID" onChange={inputHandlers} />
 
           <div className="labelCol">
             <label htmlFor="price">Price of the Book:</label>
-            <input type="number" id="price" name="price" value={intBook.price} placeholder="Enter book ID" onChange={inputHandlers}/>
+            <input type="number" id="price" name="price" value={intBook.price} placeholder="Price" onChange={inputHandlers}/>
           </div>
         </div>
 

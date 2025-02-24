@@ -51,8 +51,8 @@ if (error) return <div>Error: {error}</div>;
             <th>Price</th>
             <th>Don. Medium</th>
             <th>Remove Date</th>
-            <th>Other</th>
-            <th>Status</th>
+            <th>Reason For Remove</th>
+            
         </tr>
         <tbody>
       {data.map((item, index) => (
@@ -70,7 +70,7 @@ if (error) return <div>Error: {error}</div>;
           <td>{item.donationMedium}</td>
           <td>{item.removeDate}</td>
           <td>{item.other}</td>       
-          <td>{item.status}</td>
+          
         </tr>
       ))}
 </tbody>
@@ -92,7 +92,7 @@ if (error) return <div>Error: {error}</div>;
                 <p><b>Total Pages:</b> {modal.totalPages}</p>
                 <p><b>Donation Medium:</b> {modal.donationMedium}</p>
                 <p><b>Remove Data:</b> {modal.removeDate}</p>
-                <p><b>Other:</b> {modal.other}</p>           
+                <p><b>Reason To Remove:</b> {modal.other}</p>           
                                
                 {/* Add more details as needed */}
                 

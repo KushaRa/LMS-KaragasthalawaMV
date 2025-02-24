@@ -3,11 +3,12 @@ import { useNavigate } from "react-router-dom";
 import "./bookTable.css";
 import axios from "axios";
 
-const BookTable = () => {
+const BookTable = ({ searchTerm }) => {
   const [data, setData] = useState([]);
   const [error, setError] = useState("");
   const [selectedBook, setSelectedBook] = useState(null);
   const [updateBook, setUpdateBook] = useState(null);
+  //const [searchName, setSearchName] = useState(null);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -64,6 +65,11 @@ const BookTable = () => {
     setUpdateBook({ ...item });
   };
 
+  const filteredData = data.filter((book) =>
+    [book.bookName, book.author, book.category, book.publisher]
+      .some(field => field.toLowerCase().includes(searchTerm.toLowerCase()))
+  );
+
   if (error) return <div>Error: {error}</div>;
 
   return (
@@ -83,12 +89,12 @@ const BookTable = () => {
             <th>Price</th>
             <th>Don. Medium</th>
             <th>Remove Date</th>
-            <th>Other</th>
-            <th>Status</th>
+            <th>Reason to Remove</th>
+            
           </tr>
         </thead>
         <tbody>
-          {data.map((item) => (
+          {filteredData.map((item) => (
             <tr key={item._id} onClick={() => handleRowClick(item)}>
               <td>{item.bookID}</td>
               <td>{item.bookName}</td>
@@ -103,7 +109,7 @@ const BookTable = () => {
               <td>{item.donationMedium}</td>
               <td>{item.removeDate}</td>
               <td>{item.other}</td>
-              <td>{item.status}</td>
+            
             </tr>
           ))}
         </tbody>
@@ -147,17 +153,10 @@ const BookTable = () => {
               <div className="row1">
                 <label>Removed Date:</label>
                 <input type="date" name="removeDate" value={updateBook.removeDate} onChange={handleInputChange} />
-                <label>Other Details:</label>
+                <label>Reason To Remove:</label>
                 <input type="text" name="other" value={updateBook.other} onChange={handleInputChange} />
               </div>
-              <div className="row1">
-                <label>Status:</label>
-                <select name="status" value={updateBook.status} onChange={handleInputChange}>
-                  <option value="Available">Available</option>
-                  <option value="Checked Out">Checked Out</option>
-                  <option value="Lost">Lost</option>
-                </select>
-              </div>
+              
 
               <button type="button" onClick={handleUpdateBook}>
                 Save

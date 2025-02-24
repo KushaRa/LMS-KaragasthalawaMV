@@ -12,8 +12,9 @@
 
 .container1 {
   display: flex;
-  flex-direction: row;
   column-gap: 100px;
+  border-radius: 15px;
+  width: 15%;
 }
 
 /* Button Section */
@@ -58,6 +59,8 @@
 .summaryTable {
   flex: 70%;
   margin-left: 10px;
+  border-radius: 2px;
+  margin-right: 1%;
 }
 
 .searchbar {

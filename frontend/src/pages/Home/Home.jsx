@@ -9,6 +9,8 @@ import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   const [formOpen, setFormOpen] = useState(false);
+  const [searchTerm, setSearchTerm] = useState("");
+  
 
   const handleOpen = () => {
     setFormOpen(true);
@@ -27,6 +29,8 @@ const Home = () => {
   const handleReturnBook = () => {
     navigate("/returnbook"); // Redirects to the ReturnBook route
   };
+
+
 
   return (
     <div className="homesec">
@@ -64,16 +68,16 @@ const Home = () => {
 
         <div className="summaryTable" style={{ backgroundColor: "white" }}>
           <div className="search-bar" style={{ margin: "20px" }}>
-            <input
+          <input
               type="text"
-              placeholder="Search for the book"
-              //value={searchTerm}
-              //onChange={(e) => setSearchTerm(e.target.value)} // Update search term
+              placeholder="Search for a book..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)} // Update search term
             />
           </div>
 
           <div className="bkTab" style={{ margin: "20px" }}>
-            <BookTable />
+            <BookTable searchTerm={searchTerm} />
           </div>
         </div>
       </div>
